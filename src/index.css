@@ -7,6 +7,11 @@
   -moz-osx-font-smoothing: grayscale;
 } */
 @import url('https://fonts.googleapis.com/css?family=Rajdhani:700');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
 
 body {
   margin: 0;

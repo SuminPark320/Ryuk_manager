@@ -2,9 +2,10 @@ import React from 'react';
 import missionImage from '../assets/sample.png';
 import '../css/MenuMission.css'
 
-const MenuMission = () => {
+const MenuMission = (e) => {
+  const id = parseInt(e.info,10);
   // 미션 데이터 배열
-  const missions = [
+  const missions1 = [
     {
       title: '미션 1',
       achieveLevel: '3/3',
@@ -24,6 +25,30 @@ const MenuMission = () => {
       ]
     }
   ];
+
+  const missions2 = [
+    {
+      title: '미션 2',
+      achieveLevel: '3/3',
+      participants: [
+        { name: '쿵짝님', image: missionImage, desc: '오늘 과일을 썰어 먹었어요!' },
+        { name: '쿵쿵님', image: missionImage, desc: '오늘 과일을 썰어 먹었어요!' },
+        { name: '쿵야님', image: missionImage, desc: '오늘 과일을 썰어 먹었어요!' }
+      ]
+    },
+    {
+      title: '미션 3',
+      achieveLevel: '2/3',
+      participants: [
+        { name: '쿵짝님', image: missionImage, desc: '오늘 과일을 썰어 먹었어요!' },
+        { name: '쿵쿵님', image: missionImage, desc: '오늘 과일을 썰어 먹었어요!' },
+        { name: '쿵야님', image: null, desc: '아직 미션을 완료하지 못했어요.' }
+      ]
+    }
+  ];
+  let missions;
+  if(id ==1) missions = missions1;
+  else missions=missions2;
 
   return (
     <div id="menu-mission-container">

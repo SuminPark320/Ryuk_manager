@@ -6,15 +6,27 @@ import canSendMsgImage from '../assets/send.png';
 import missionImage from '../assets/sample.png';
 import '../css/MenuUser.css';  // CSS 파일을 임포트합니다.
 
-const MenuUser = () => {
+const MenuUser = (e) => {
+    const id = parseInt(e.info,10);
+
     const teamMembers = ['Member 1', 'Member 2', 'Member 3'];
     const [selectedMember, setSelectedMember] = useState(teamMembers[0]);
 
-    const todayMissions = [
+    const todayMissions1 = [
         { title: '미션 1', isComplete: true, canSendMsg: false, description: '오늘 과일을 썰어 먹었어요!', image: missionImage },
         { title: '미션 2', isComplete: true, canSendMsg: false, description: '오늘 과일을 썰어 먹었어요!', image: missionImage },
         { title: '미션 3', isComplete: false, canSendMsg: true, description: '아직 미션을 완료하지 않았습니다!', image: null }
     ];
+
+    const todayMissions2 = [
+        { title: '미션 11', isComplete: true, canSendMsg: false, description: '오늘 과일을 썰어 먹었어요!', image: missionImage },
+        { title: '미션 2', isComplete: true, canSendMsg: false, description: '오늘 과일을 썰어 먹었어요!', image: missionImage },
+        { title: '미션 3', isComplete: false, canSendMsg: true, description: '아직 미션을 완료하지 않았습니다!', image: null }
+    ];
+    let todayMissions ;
+
+    if(id == 1) todayMissions = todayMissions1;
+    else todayMissions = todayMissions2;
 
     return (
         <div className="menu-user-container">
